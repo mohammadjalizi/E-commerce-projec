@@ -99,7 +99,7 @@ free expres shopi
         sx={{ bgcolor: 'background.paper' }}
       >
         <ListItem
-          button
+       
           id="lock-button"
           aria-haspopup="listbox"
           aria-controls="lock-menu"
@@ -107,8 +107,8 @@ free expres shopi
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
         >
-          <ListItemText
-            primary="When device is locked"
+          <ListItemText sx={{".MuiTypography-root ": {fontSize:"10px"}}}
+     
             secondary={options[selectedIndex]}
           />
         </ListItem>
@@ -124,7 +124,11 @@ free expres shopi
         }}
       >
         {options.map((option, index) => (
-          <MenuItem
+          <MenuItem sx={{
+             fontSize:"11px",
+             p:'3px 10px',
+             minHeight:"10px"
+          }}
             key={option}
             disabled={index === 0}
             selected={index === selectedIndex}
@@ -135,9 +139,9 @@ free expres shopi
         ))}
       </Menu>
 
-  <TwitterIcon fontSize="small"  />
-  <FacebookIcon fontSize="small" />
-  <InstagramIcon  fontSize="small"/>
+  <TwitterIcon     sx={{fontSize:"16px", color:"#fff"}}    />
+  <FacebookIcon    sx={{fontSize:"16px", color:"#fff"}}  />
+  <InstagramIcon    sx={{fontSize:"16px", color:"#fff"}}   />
   </Stack>
   </Box>
   )
