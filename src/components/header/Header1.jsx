@@ -1,12 +1,17 @@
 import   { useContext } from "react";
 import { ColorModeContext } from "../../theme";
-import { IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, useTheme } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 
 const Header1 = () => {
   const colorMode = useContext(ColorModeContext);
   const theme = useTheme();
   return (
+
+    <Box sx={{bgcolor:"#2B3445"}}>
+
+
+ {/* start darkmodd icon */}
     <div>
     {theme.palette.mode === "light" ? (
       <IconButton
@@ -36,6 +41,8 @@ const Header1 = () => {
       </IconButton>
     )}
   </div>
+  {/* end darkmoddd */}
+  </Box>
   )
 }
 
