@@ -1,6 +1,6 @@
 import   { useContext } from "react";
 import { ColorModeContext } from "../../theme";
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 
 const Header1 = () => {
@@ -9,8 +9,26 @@ const Header1 = () => {
   return (
 
     <Box sx={{bgcolor:"#2B3445"}}>
+<Stack direction={"row"}  alignItems={"center"}> 
+     <Typography sx={
+      {bgcolor:"#D23f57",
+      p:"3px 10px",
+       borderRadius:"12px",
+        color:"#fff" ,
+         fontWeight:"bold",
+         mr:2,
 
+        
+        }
+         
+         }>
 
+       hot 
+     </Typography>
+     <Typography sx={{ fontWeight:"30px"}}>
+
+free expres shopi
+</Typography>
  {/* start darkmodd icon */}
     <div>
     {theme.palette.mode === "light" ? (
@@ -42,6 +60,7 @@ const Header1 = () => {
     )}
   </div>
   {/* end darkmoddd */}
+  </Stack>
   </Box>
   )
 }
