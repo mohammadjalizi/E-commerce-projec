@@ -1,6 +1,6 @@
 import   { useContext, useState } from "react";
 import { ColorModeContext } from "../../theme";
-import { Box, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Container, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Stack, Typography, useTheme } from "@mui/material";
 import { DarkModeOutlined, Expand, LightModeOutlined } from "@mui/icons-material";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -36,8 +36,9 @@ const Header1 = () => {
 
   return (
 
-    <Box sx={{bgcolor:"#2B3445"}}>
-<Stack direction={"row"}  alignItems={"center"}> 
+    <Box sx={{bgcolor:"#2B3445",py:"4px",borderBottomRightRadius:"4",borderBottomLeftRadius:"4"}}>
+      <Container>
+      <Stack direction={"row"}  alignItems={"center"}> 
      <Typography sx={
       {bgcolor:"#D23f57",
       p:"3px 10px",
@@ -53,7 +54,7 @@ const Header1 = () => {
 
        hot 
      </Typography>
-     <Typography sx={{ fontWeight:"30px"}}>
+     <Typography sx={{ fontWeight:"30px",color:"#fff"}}>
 
 free expres shopi
 </Typography>
@@ -100,7 +101,7 @@ free expres shopi
       >
         <ListItem
        sx={{
-"&:hover":{cursor:"pointer"}
+"&:hover":{cursor:"pointer",px:1}
 
        }}
           id="lock-button"
@@ -147,6 +148,8 @@ free expres shopi
   <FacebookIcon    sx={{fontSize:"16px", color:"#fff"}}  />
   <InstagramIcon    sx={{fontSize:"16px", color:"#fff"}}   />
   </Stack>
+      </Container>
+
   </Box>
   )
 }
