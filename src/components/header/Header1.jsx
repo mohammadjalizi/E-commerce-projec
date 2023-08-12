@@ -8,8 +8,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const options = [
-  'Ar',
-  'En'
+  'AR',
+  'EN'
 
 ];
 
@@ -110,7 +110,7 @@ free expres shopi
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
         >
-          <ListItemText sx={{".MuiTypography-root ": {fontSize:"10px"}}}
+          <ListItemText sx={{".MuiTypography-root ": {fontSize:"10px",color:"#fff"}}}
      
             secondary={options[selectedIndex]}
           />
@@ -134,7 +134,7 @@ free expres shopi
              minHeight:"10px"
           }}
             key={option}
-            disabled={index === 0}
+          
             selected={index === selectedIndex}
             onClick={(event) => handleMenuItemClick(event, index)}
           >
