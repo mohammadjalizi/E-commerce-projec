@@ -1,11 +1,11 @@
 import   { useContext, useState } from "react";
 import { ColorModeContext } from "../../theme";
 import { Box, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Stack, Typography, useTheme } from "@mui/material";
-import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
+import { DarkModeOutlined, Expand, LightModeOutlined } from "@mui/icons-material";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const options = [
   'Ar',
@@ -70,7 +70,7 @@ free expres shopi
           );
           colorMode.toggleColorMode();
         }}
-        color="inherit"
+ sx={{color:"#fff"}}
       >
         <LightModeOutlined fontSize="small"/>
       </IconButton>
@@ -96,11 +96,11 @@ free expres shopi
   <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor: 'background.paper' }}
+        sx={{ color:"#fff" }}
       >
         <ListItem
        sx={{
-cursor:"pointer"
+"&:hover":{cursor:"pointer"}
 
        }}
           id="lock-button"
@@ -114,6 +114,7 @@ cursor:"pointer"
      
             secondary={options[selectedIndex]}
           />
+         <ExpandMoreIcon/>
         </ListItem>
       </List>
       <Menu
