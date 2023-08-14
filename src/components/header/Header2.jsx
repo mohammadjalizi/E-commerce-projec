@@ -1,5 +1,5 @@
 import { Rowing, ShoppingCartOutlined } from '@mui/icons-material'
-import { Container, InputBase, Stack, Typography } from '@mui/material'
+import { Container, IconButton, InputBase, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
@@ -64,8 +64,10 @@ const Header2 = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
             </Search>
-
-            <PersonIcon/>
+<IconButton>
+  
+              <PersonIcon/>
+</IconButton>
    </Container>
   )
 }
