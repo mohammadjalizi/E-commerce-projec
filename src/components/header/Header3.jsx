@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, IconButton, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -19,7 +19,12 @@ const Header3 = () => {
   };
   const theme=useTheme()
   return (
-    <Container>
+    <Container sx={{
+display:"flex",
+alignItems:"center",
+justifyContent:"space-between"
+
+    }} >
 
 <Box>
         <Button
@@ -64,7 +69,9 @@ const Header3 = () => {
         </Menu>
   
 </Box>
-<MenuIcon/>
+<IconButton>
+  <MenuIcon/>
+</IconButton>
     </Container>
   )
 }
