@@ -101,7 +101,11 @@ display:"flex"
       <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor:theme.palette.mycolor.main}}
+        sx={{ bgcolor:theme.palette.mycolor.main,
+          borderBottomRightRadius: 22,
+          borderTopRightRadius: 22,
+          p: "0",
+        }}
       >
         <ListItem
         
@@ -113,7 +117,11 @@ display:"flex"
           onClick={handleClickListItem}
         >
           <ListItemText
-        className='border'
+   sx={{
+    width: 93,
+    textAlign: "center",
+    "&:hover": { cursor: "pointer" },
+  }}
             secondary={options[selectedIndex]}
           
           />
