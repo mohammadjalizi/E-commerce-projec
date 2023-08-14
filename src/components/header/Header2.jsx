@@ -1,10 +1,11 @@
 
-import { Badge, Container, IconButton, InputBase, Stack, Typography } from '@mui/material'
+import { Badge, Container, IconButton, InputBase, List, ListItem, ListItemText, Menu, MenuItem, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { ShoppingCartOutlined } from '@mui/icons-material';
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -56,9 +57,29 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 
-
+const options = [
+  'Show some love to MUI',
+  'Show all notification content',
+  'Hide sensitive notification content',
+  'Hide all notification content',
+];
 
 const Header2 = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const open = Boolean(anchorEl);
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Container sx={{my:3,display:'flex',justifyContent:"space-between"}}>
 <Stack  alignItems={"center"}>
@@ -66,7 +87,11 @@ const Header2 = () => {
 <ShoppingCartOutlined/>
 <Typography>   E-commerce  </Typography>
 </Stack>
-<Search>
+<Search sx={{
+borderRadius:"22px",
+display:"flex"
+
+}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -74,19 +99,64 @@ const Header2 = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
+             <div>
+      <List
+        component="nav"
+        aria-label="Device settings"
+        sx={{ bgcolor: 'background.paper' }}
+      >
+        <ListItem
+          button
+          id="lock-button"
+          aria-haspopup="listbox"
+          aria-controls="lock-menu"
+          aria-label="when device is locked"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClickListItem}
+        >
+          <ListItemText
+            primary="When device is locked"
+            secondary={options[selectedIndex]}
+          />
+        </ListItem>
+      </List>
+      <Menu
+        id="lock-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'lock-button',
+          role: 'listbox',
+        }}
+      >
+        {options.map((option, index) => (
+          <MenuItem
+            key={option}
+            disabled={index === 0}
+            selected={index === selectedIndex}
+            onClick={(event) => handleMenuItemClick(event, index)}
+          >
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
             </Search>
 
 
 
-       <IconButton>
-         
-                     <PersonIcon/>
-       </IconButton>
-       <IconButton aria-label="cart">
-             <StyledBadge badgeContent={4} color="secondary">
-               <ShoppingCartIcon />
-             </StyledBadge>
-           </IconButton>
+ <Stack direction={"row"}  alignItems={"center"} >
+        <IconButton>
+          
+                      <PersonIcon/>
+        </IconButton>
+        <IconButton aria-label="cart">
+              <StyledBadge badgeContent={4} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+ </Stack  >
 
    </Container>
   )
