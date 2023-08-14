@@ -37,7 +37,7 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   border: "1px solid #777",
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+   border:"1px solid #333"
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
