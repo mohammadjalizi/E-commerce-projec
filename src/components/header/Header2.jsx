@@ -1,9 +1,20 @@
-import { Rowing, ShoppingCartOutlined } from '@mui/icons-material'
-import { Container, IconButton, InputBase, Stack, Typography } from '@mui/material'
+
+import { Badge, Container, IconButton, InputBase, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
@@ -49,7 +60,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const Header2 = () => {
   return (
-    <Container sx={{my:3,display:'flex'}}>
+    <Container sx={{my:3,display:'flex',justifyContent:"space-between"}}>
 <Stack  alignItems={"center"}>
 
 <ShoppingCartOutlined/>
@@ -64,10 +75,19 @@ const Header2 = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
             </Search>
-<IconButton>
-  
-              <PersonIcon/>
-</IconButton>
+
+
+
+       <IconButton>
+         
+                     <PersonIcon/>
+       </IconButton>
+       <IconButton aria-label="cart">
+             <StyledBadge badgeContent={4} color="secondary">
+               <ShoppingCartIcon />
+             </StyledBadge>
+           </IconButton>
+
    </Container>
   )
 }
