@@ -21,48 +21,50 @@ const Header3 = () => {
   return (
     <Container>
 
-<div>
-      <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{
-width:222,
-bgcolor:theme.palette.mycolor.main,
-color:theme.palette.text.primary
-
-
-        }}
-      >
-        <WindowIcon/>
-        <Typography
-            sx={{
-              padding: "0",
-              textTransform: "capitalize",
-              mx: 1,
-            }}
-          >
-            Categories
-          </Typography>
-          <Box  flexGrow={1}/>
-<KeyboardArrowRightOutlinedIcon/>
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
+<Box>
+        <Button
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          sx={{
+  width:222,
+  bgcolor:theme.palette.mycolor.main,
+  color:theme.palette.text.primary
+  
+  
+          }}
+        >
+          <WindowIcon/>
+          <Typography
+              sx={{
+                padding: "0",
+                textTransform: "capitalize",
+                mx: 1,
+              }}
+            >
+              Categories
+            </Typography>
+            <Box  flexGrow={1}/>
+  <KeyboardArrowRightOutlinedIcon/>
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={handleClose}>My account</MenuItem>
+          <MenuItem onClick={handleClose}>Logout</MenuItem>
+        </Menu>
+  
+</Box>
+<MenuIcon/>
     </Container>
   )
 }
