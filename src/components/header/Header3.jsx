@@ -26,6 +26,12 @@ const Header3 = () => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{
+width:222,
+display:'flex',
+justifyContent:"space-between"
+
+        }}
       >
         <WindowIcon/>
         <Typography
