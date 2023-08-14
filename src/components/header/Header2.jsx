@@ -5,7 +5,8 @@ import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { ShoppingCartOutlined } from '@mui/icons-material';
+import { ExpandMore, ShoppingCartOutlined } from '@mui/icons-material';
+import { useTheme } from '@emotion/react';
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -33,7 +34,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+border:"1px solid #777",
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -57,12 +58,8 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 
-const options = [
-  'Show some love to MUI',
-  'Show all notification content',
-  'Hide sensitive notification content',
-  'Hide all notification content',
-];
+const options = ["All Categories", "CAR", "Clothes", "Electronics"];
+
 
 const Header2 = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -80,6 +77,7 @@ const Header2 = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const theme=useTheme()
   return (
     <Container sx={{my:3,display:'flex',justifyContent:"space-between"}}>
 <Stack  alignItems={"center"}>
@@ -103,10 +101,10 @@ display:"flex"
       <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor: 'background.paper' }}
+        sx={{ bgcolor:theme.palette.mycolor.main}}
       >
         <ListItem
-          button
+        
           id="lock-button"
           aria-haspopup="listbox"
           aria-controls="lock-menu"
@@ -115,9 +113,11 @@ display:"flex"
           onClick={handleClickListItem}
         >
           <ListItemText
-            primary="When device is locked"
+        className='border'
             secondary={options[selectedIndex]}
+          
           />
+            <ExpandMore sx={{ fontSize: "16px" }} />
         </ListItem>
       </List>
       <Menu
@@ -133,7 +133,7 @@ display:"flex"
         {options.map((option, index) => (
           <MenuItem
             key={option}
-            disabled={index === 0}
+        
             selected={index === selectedIndex}
             onClick={(event) => handleMenuItemClick(event, index)}
           >
