@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+import { useTheme } from '@emotion/react';
 const Header3 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -16,6 +17,7 @@ const Header3 = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const theme=useTheme()
   return (
     <Container>
 
@@ -28,8 +30,9 @@ const Header3 = () => {
         onClick={handleClick}
         sx={{
 width:222,
-display:'flex',
-justifyContent:"space-between"
+bgcolor:theme.palette.mycolor.main,
+color:theme.palette.text.primary
+
 
         }}
       >
@@ -43,6 +46,7 @@ justifyContent:"space-between"
           >
             Categories
           </Typography>
+          <Box  flexGrow={1}/>
 <KeyboardArrowRightOutlinedIcon/>
       </Button>
       <Menu
