@@ -1,8 +1,12 @@
-import { Container } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+
+import MenuIcon from "@mui/icons-material/Menu";
+import WindowIcon from "@mui/icons-material/Window";
+import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 const Header3 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -23,7 +27,17 @@ const Header3 = () => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        <WindowIcon/>
+        <Typography
+            sx={{
+              padding: "0",
+              textTransform: "capitalize",
+              mx: 1,
+            }}
+          >
+            Categories
+          </Typography>
+<KeyboardArrowRightOutlinedIcon/>
       </Button>
       <Menu
         id="basic-menu"

@@ -1,6 +1,6 @@
 
 import { Badge, Container, IconButton, InputBase, List, ListItem, ListItemText, Menu, MenuItem, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
@@ -64,7 +64,7 @@ const options = ["All Categories", "CAR", "Clothes", "Electronics"];
 
 const Header2 = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const open = Boolean(anchorEl);
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
