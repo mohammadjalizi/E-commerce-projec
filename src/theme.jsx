@@ -29,7 +29,7 @@ main:"f6f9fc",
       : {
           // palette values for dark mode
           mycolor:{
-            main:"252b32",
+            main:"#252b32",
             
             
                       },

@@ -32,9 +32,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+  flexGrow: 0.4,
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
-border:"1px solid #777",
+  border: "1px solid #777",
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -87,7 +88,8 @@ const Header2 = () => {
 </Stack>
 <Search sx={{
 borderRadius:"22px",
-display:"flex"
+display:"flex",
+justifyContent:'space-between'
 
 }}>
             <SearchIconWrapper>
