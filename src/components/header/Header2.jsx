@@ -1,9 +1,9 @@
-import { ShoppingCartOutlined } from '@mui/icons-material'
+import { Rowing, ShoppingCartOutlined } from '@mui/icons-material'
 import { Container, InputBase, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
-
+import PersonIcon from '@mui/icons-material/Person';
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
@@ -49,8 +49,8 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const Header2 = () => {
   return (
-    <Container sx={{my:3}}>
-<Stack alignItems={"center"}>
+    <Container sx={{my:3,display:'flex'}}>
+<Stack  alignItems={"center"}>
 
 <ShoppingCartOutlined/>
 <Typography>   E-commerce  </Typography>
@@ -64,6 +64,8 @@ const Header2 = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
             </Search>
+
+            <PersonIcon/>
    </Container>
   )
 }
