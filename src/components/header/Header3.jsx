@@ -1,4 +1,4 @@
-import { Box, Container, IconButton, Typography } from '@mui/material'
+import { Box, Container, IconButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -7,6 +7,14 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+import {
+  SportsEsportsOutlined,
+  ElectricBikeOutlined,
+  LaptopChromebookOutlined,
+  MenuBookOutlined,
+  Close,
+  ContentCut,
+} from "@mui/icons-material";
 import { useTheme } from '@emotion/react';
 const Header3 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -63,9 +71,14 @@ justifyContent:"space-between"
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem onClick={handleClose}>     Profile</MenuItem>
+          <MenuItem>
+          <ListItemIcon>
+            <ContentCut fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Cut</ListItemText>
+         
+        </MenuItem>
         </Menu>
   
 </Box>
