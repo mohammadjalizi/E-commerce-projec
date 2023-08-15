@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
+import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
@@ -138,8 +138,13 @@ justifyContent:"space-between"
             anchor={"top"}
             open={state["top"]}
             onClose={toggleDrawer("top", false)}
+            sx={{".MuiPaper-root":{height:"100%"}}}
           >
           aaaaa
+<IconButton  onClick={toggleDrawer("top", false)}>
+  <CloseIcon/>
+           
+</IconButton>
           </Drawer>
     </Container>
   )
