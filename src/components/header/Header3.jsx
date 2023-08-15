@@ -1,4 +1,4 @@
-import { Box, Container, IconButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Box, Container, Drawer, IconButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -26,6 +26,31 @@ const Header3 = () => {
     setAnchorEl(null);
   };
   const theme=useTheme()
+
+
+// drawerrrr
+
+const [state, setState] =useState({
+  top: false,
+  left: false,
+  bottom: false,
+  right: false,
+});
+
+const toggleDrawer = (anchor, open) => (event) => {
+  if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    return;
+  }
+
+  setState({ ...state, [anchor]: open });
+};
+
+
+
+  function list(anchor) {
+    throw new Error('Function not implemented.');
+  }
+
   return (
     <Container sx={{
 display:"flex",
@@ -106,9 +131,16 @@ justifyContent:"space-between"
         </Menu>
   
 </Box>
-<IconButton>
+<IconButton  onClick={toggleDrawer("top", true)}>
   <MenuIcon/>
 </IconButton>
+<Drawer
+            anchor={"top"}
+            open={state["top"]}
+            onClose={toggleDrawer("top", false)}
+          >
+          aaaaa
+          </Drawer>
     </Container>
   )
 }
