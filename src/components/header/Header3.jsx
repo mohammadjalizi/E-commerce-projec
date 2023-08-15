@@ -131,20 +131,22 @@ justifyContent:"space-between"
         </Menu>
   
 </Box>
-<IconButton  onClick={toggleDrawer("top", true)}>
-  <MenuIcon/>
-</IconButton>
-<Drawer
-            anchor={"top"}
-            open={state["top"]}
-            onClose={toggleDrawer("top", false)}
-            sx={{".MuiPaper-root":{height:"100%"}}}
-          >
-          aaaaa
-<IconButton  onClick={toggleDrawer("top", false)}>
-  <CloseIcon/>
-           
-</IconButton>
+  <IconButton  onClick={toggleDrawer("top", true)}>
+    <MenuIcon/>
+  </IconButton>
+  <Drawer
+              anchor={"top"}
+              open={state["top"]}
+              onClose={toggleDrawer("top", false)}
+              sx={{".MuiPaper-root":{height:"100%"}}}
+            >
+         
+<Box sx={{width:444,mx:"auto",mt:6, position:"relative",pt:10}}>
+    <IconButton sx={{position:"absolute",top:0,right:0}}  onClick={toggleDrawer("top", false)}>
+      <CloseIcon/>
+              
+    </IconButton>
+</Box >
           </Drawer>
     </Container>
   )
