@@ -71,14 +71,37 @@ justifyContent:"space-between"
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem onClick={handleClose}>     Profile</MenuItem>
-          <MenuItem>
-          <ListItemIcon>
-            <ContentCut fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Cut</ListItemText>
-         
-        </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon>
+              <ElectricBikeOutlined fontSize="small" />
+            </ListItemIcon>
+
+            <ListItemText>Bikes</ListItemText>
+          </MenuItem>
+
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon>
+              <LaptopChromebookOutlined fontSize="small" />
+            </ListItemIcon>
+
+            <ListItemText>Electronics</ListItemText>
+          </MenuItem>
+
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon>
+              <MenuBookOutlined fontSize="small" />
+            </ListItemIcon>
+
+            <ListItemText>Books</ListItemText>
+          </MenuItem>
+
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon>
+              <SportsEsportsOutlined fontSize="small" />
+            </ListItemIcon>
+
+            <ListItemText>Games</ListItemText>
+          </MenuItem>
         </Menu>
   
 </Box>
