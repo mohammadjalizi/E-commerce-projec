@@ -103,6 +103,7 @@ justifyContent:'space-between'
       <List
         component="nav"
         aria-label="Device settings"
+        // @ts-ignore
         sx={{ bgcolor:theme.palette.mycolor.main,
           borderBottomRightRadius: 22,
           borderTopRightRadius: 22,

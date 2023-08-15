@@ -1,4 +1,4 @@
-import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -74,7 +74,9 @@ justifyContent:"space-between"
           onClick={handleClick}
           sx={{
   width:222,
+  // @ts-ignore
   bgcolor:theme.palette.mycolor.main,
+  // @ts-ignore
   color:theme.palette.text.primary
   
   
@@ -101,6 +103,7 @@ justifyContent:"space-between"
           MenuListProps={{
             'aria-labelledby': 'basic-button',
           }}
+          // @ts-ignore
           sx={{ ".MuiPaper-root":{width:222,bgcolor:theme.palette.mycolor.main} }}
         >
           <MenuItem onClick={handleClose}>
@@ -137,9 +140,13 @@ justifyContent:"space-between"
         </Menu>
   
 </Box>
-  <IconButton  onClick={toggleDrawer("top", true)}>
-    <MenuIcon/>
-  </IconButton>
+{useMediaQuery("(max-width:1200px)") && (
+        <IconButton onClick={toggleDrawer("top", true)}>
+          <MenuIcon />
+        </IconButton>
+      )}
+
+
   <Drawer
               anchor={"top"}
               open={state["top"]}
