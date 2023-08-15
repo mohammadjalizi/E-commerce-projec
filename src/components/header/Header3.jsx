@@ -70,13 +70,7 @@ justifyContent:"space-between"
           MenuListProps={{
             'aria-labelledby': 'basic-button',
           }}
-                  sx={{
-            ".MuiPaper-root": {
-              width: 220,
-              // @ts-ignore
-              bgcolor: theme.palette.myColor.main,
-            },
-          }}
+       sx={{ ".MuiPaper-root":{width:222}   }}
         >
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
