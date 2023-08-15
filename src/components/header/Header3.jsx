@@ -152,7 +152,7 @@ justifyContent:"space-between"
             >
          
 <Box sx={{width:444,mx:"auto",mt:6, position:"relative",pt:10}}>
-    <IconButton sx={{position:"absolute",top:0,right:0}}  onClick={toggleDrawer("top", false)}>
+    <IconButton sx={{position:"absolute",top:0,right:0,":hover":{rotate:"160deg", color:"red", transition:"0.5s"}}}  onClick={toggleDrawer("top", false)}>
       <CloseIcon/>
               
     </IconButton>
