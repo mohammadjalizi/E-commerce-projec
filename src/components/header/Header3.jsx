@@ -1,4 +1,4 @@
-import { Box, Container, Drawer, IconButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -144,7 +144,11 @@ justifyContent:"space-between"
               anchor={"top"}
               open={state["top"]}
               onClose={toggleDrawer("top", false)}
-              sx={{".MuiPaper-root":{height:"100%"}}}
+              sx={{
+                ".MuiPaper-root.css-1sozasi-MuiPaper-root-MuiDrawer-paper": {
+                  height: "100%",
+                },
+              }}
             >
          
 <Box sx={{width:444,mx:"auto",mt:6, position:"relative",pt:10}}>
@@ -152,21 +156,52 @@ justifyContent:"space-between"
       <CloseIcon/>
               
     </IconButton>
-    <Accordion elevation={0} sx={{ bgcolor:"initial" }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Accordion 1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+   
+    {[
+            { mainLink: "Home", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "Mega menu", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            {
+              mainLink: "full screen menu",
+              subLinks: ["Link 1", "Link 2", "Link 3"],
+            },
+            { mainLink: "pages", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            {
+              mainLink: "user account",
+              subLinks: ["Link 1", "Link 2", "Link 3"],
+            },
+            {
+              mainLink: "vendor account",
+              subLinks: ["Link 1", "Link 2", "Link 3"],
+            },
+          ].map((item) => {
+            return (
+              <Accordion
+                key={item.mainLink}
+                elevation={0}
+                sx={{ bgcolor: "initial" }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>{item.mainLink}</Typography>
+                </AccordionSummary>
+
+                <List sx={{ py: 0, my: 0 }}>
+                  {item.subLinks.map((link) => {
+                    return (
+                      <ListItem key={link} sx={{ py: 0, my: 0 }}>
+                        <ListItemButton>
+                          <ListItemText primary={link} />
+                        </ListItemButton>
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              </Accordion>
+            );
+          })}
 </Box >
           </Drawer>
     </Container>
