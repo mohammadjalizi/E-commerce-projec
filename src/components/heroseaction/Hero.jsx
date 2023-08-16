@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-   <Container>
+   <Container sx={{ mt:2.5,display:"flex", alignItems:"center"}}  >
 
 <Box>
   slider
