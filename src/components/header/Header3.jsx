@@ -61,7 +61,8 @@ const toggleDrawer = (anchor, open) => (event) => {
     <Container sx={{
 display:"flex",
 alignItems:"center",
-justifyContent:"space-between"
+justifyContent:"space-between",
+mt:5
 
     }} >
 
@@ -140,6 +141,16 @@ justifyContent:"space-between"
         </Menu>
   
 </Box>
+{useMediaQuery("(min-width:1200px)") && (
+        <Stack gap={4} direction={"row"} alignItems={"center"}>
+          <Links title={"Home"} />
+          <Links title={"Mega Menu"} />
+          <Links title={"Full Screen Menu"} />
+          <Links title={"pages"} />
+          <Links title={"User Account"} />
+          <Links title={"Vendor Account"} />
+        </Stack>
+      )}
 {useMediaQuery("(max-width:1200px)") && (
         <IconButton onClick={toggleDrawer("top", true)}>
           <MenuIcon />
