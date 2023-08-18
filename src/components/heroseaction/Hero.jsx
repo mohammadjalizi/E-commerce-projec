@@ -20,7 +20,7 @@ const Hero = () => {
   slider
 </Box>
     
-<Box>
+<Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
 
 <Box sx={{position:"relative"}}>
  <img src='src\image\banner-17.jpg' alt=''/>
