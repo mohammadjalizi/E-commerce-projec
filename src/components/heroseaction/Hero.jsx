@@ -1,5 +1,5 @@
 import { TypeSpecimenTwoTone } from '@mui/icons-material'
-
+import './Swiper.css'
 import React from 'react'
 import {
   Box,
@@ -11,14 +11,32 @@ import {
   useTheme,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
 
 const Hero = () => {
   return (
    <Container sx={{ mt:2.5,display:"flex", alignItems:"center" }}  >
 
-<Box flexGrow={1}>
-  slider
-</Box>
+    <Swiper
+        pagination={{
+          loop={true},
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src='src\image\banner-15.jpg'/>
+          
+          </SwiperSlide>
+        <SwiperSlide>
+          <img src='src\image\banner-25.jpg'/>
+
+          </SwiperSlide>
+
+      </Swiper>
     
 <Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
 
