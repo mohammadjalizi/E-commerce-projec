@@ -21,7 +21,7 @@ const Hero = () => {
 
     <Swiper
         pagination={{
-          loop={true},
+      
           dynamicBullets: true,
         }}
         modules={[Pagination]}
