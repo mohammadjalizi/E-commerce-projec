@@ -15,6 +15,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 
+const mySlider = [
+  { text: "MEN", link: "./images/banner-15.jpg" },
+  { text: "WOMEN", link: ".//images/banner-25.jpg" },
+];
+
 const Hero = () => {
   return (
    <Container sx={{ mt:2.5,display:"flex", alignItems:"center" }}  >
