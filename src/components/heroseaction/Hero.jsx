@@ -39,7 +39,7 @@ const Hero = () => {
          {mySlider.map((item) => {
             return (
               <SwiperSlide key={item.link} className="parent-slider">
-                <img src={item.link} alt="" />
+                <img src="src\image\banner-25.jpg" alt="" />
                 <Box
                   sx={{
                     [theme.breakpoints.up("sm")]: {
