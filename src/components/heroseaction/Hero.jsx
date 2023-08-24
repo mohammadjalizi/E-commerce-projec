@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-   <Container>
+   <Container sx={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
 <Box>
 
 slider
@@ -13,8 +13,13 @@ slider
 
 <Box>
 
-<Box></Box>
-<Box></Box>
+<Box>
+
+<img src='src\image\banner-16.jpg'/>
+</Box>
+<Box>
+ <img src='src\image\banner-17.jpg'/>
+</Box>
 </Box>
 
 
