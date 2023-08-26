@@ -3,8 +3,8 @@ import React from 'react'
 
 const Hero = () => {
   return (
-  <Container>
-<Box>
+  <Container sx={{mt:2.5,display:"flex",alignItems:"center"}}>
+<Box flexGrow={1}>
 sliderrr
 </Box>
 
