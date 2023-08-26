@@ -22,7 +22,8 @@ import {
   ContentCut,
 } from "@mui/icons-material";
 import { useTheme } from '@emotion/react';
-import Links from './link';
+import Links from './Link';
+
 const Header3 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
