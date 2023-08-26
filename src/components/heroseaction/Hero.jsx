@@ -1,11 +1,30 @@
 import { Box, Container, Link, Stack, Typography } from '@mui/material'
 import React from 'react'
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 const Hero = () => {
   return (
   <Container sx={{mt:2.5,display:"flex",alignItems:"center"}}>
 <Box flexGrow={1}>
-sliderrr
+<Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
 </Box>
 
 <Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
