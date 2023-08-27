@@ -10,6 +10,7 @@ import "./slider.css";
 
 
 import { Pagination } from 'swiper/modules';
+import IconSection from './IconSection ';
 
 
 const mySlider = [
@@ -19,9 +20,11 @@ const mySlider = [
 const Hero = () => {
   const theme = useTheme();
   return (
-  <Container sx={{mt:2.5,display:"flex",alignItems:"center",gap:2}}>
+  <Container>
+<Box  sx={{mt:2.5,display:"flex",alignItems:"center",gap:2}}>
 
 <Swiper
+loop={true}
         pagination={{
           dynamicBullets: true,
         }}
@@ -128,7 +131,7 @@ return(
 
 <Box sx={{position:"relative"}} > 
   
-  <img width={"100%"} src=' src\image\banner-16.jpg'/>
+<img width={"100%"} src=".//images/banner-17.jpg" alt="" />
   <Stack
               sx={{
                 position: "absolute",
@@ -186,7 +189,7 @@ return(
             </Stack>
    </Box>
 <Box sx={{position:"relative"}}> 
-  <img width={"100%"} src='src\image\banner-17.jpg'/>
+<img width={"100%"} src=".//images/banner-16.jpg" alt="" />
   <Stack
               sx={{
                 position: "absolute",
@@ -246,8 +249,10 @@ return(
             </Stack>
    </Box>
 </Box>
+</Box>
 
 
+<IconSection />
   </Container>
   )
 }
