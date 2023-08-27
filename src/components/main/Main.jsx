@@ -1,9 +1,6 @@
 import { Box, Container, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React from 'react'
-import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
-import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
-import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
-import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
+
 const Main = () => {
   const [alignment, setAlignment] = React.useState('left');
 
@@ -20,19 +17,27 @@ const Main = () => {
             </Typography>
           </Box>
           <ToggleButtonGroup
+           sx={{
+            ".Mui-selected": {
+              border: "1px solid rgba(233, 69, 96, 0.5) !important",
+              color: "#e94560",
+              backgroundColor: "initial",
+            },
+          }}
+          color='error'
       value={alignment}
       exclusive
       onChange={handleAlignment}
       aria-label="text alignment"
     >
-      <ToggleButton value="left" aria-label="left aligned">
-        <FormatAlignLeftIcon />
+      <ToggleButton    className='myButton'   value="left" aria-label="left aligned">
+         All Products
       </ToggleButton>
-      <ToggleButton value="center" aria-label="centered">
-        <FormatAlignCenterIcon />
+      <ToggleButton   className='myButton'   value="center" aria-label="centered">
+      MEN category
       </ToggleButton>
-      <ToggleButton value="right" aria-label="right aligned">
-        <FormatAlignRightIcon />
+      <ToggleButton    className='myButton'  value="right" aria-label="right aligned">
+            Women category
       </ToggleButton>
      
     </ToggleButtonGroup>
