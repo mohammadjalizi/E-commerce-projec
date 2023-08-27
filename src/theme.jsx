@@ -25,7 +25,11 @@ main:"f6f9fc",
           favColor: {
             main: grey[300],
           },
+          bg: {
+            main: "#F6F6F6"
+          },
         }
+        
       : {
           // palette values for dark mode
           mycolor:{
@@ -33,7 +37,9 @@ main:"f6f9fc",
             
             
                       },
-
+                      bg: {
+                        main: "#1D2021",
+                      },
           neutral: {
             main: "#64748B",
           },

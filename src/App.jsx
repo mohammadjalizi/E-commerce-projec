@@ -1,5 +1,5 @@
 
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Header1 from "./components/header/Header1";
 
@@ -22,8 +22,15 @@ function App() {
       <Header1/>
       <Header2/>
       <Header3/>
-      <Hero/>
-      <Main/>
+      <Box
+          bgcolor={
+            // @ts-ignore
+            theme.palette.bg.main
+          }
+        >
+          <Hero />
+          <Main />
+        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

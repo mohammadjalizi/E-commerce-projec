@@ -11,18 +11,15 @@ const Main = () => {
     setAlignment(newAlignment);
   };
   return (
-<Container sx={{display:"flex"}}  >
-<Stack flexGrow={1} >
+<Container  >
+<Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
 <Box >
             <Typography variant="h6">Selected Products</Typography>
             <Typography fontWeight={300} variant="body1">
               All our new arrivals in a exclusive brand selection
             </Typography>
           </Box>
-
-</Stack>
-<Stack>
-<ToggleButtonGroup
+          <ToggleButtonGroup
       value={alignment}
       exclusive
       onChange={handleAlignment}
@@ -37,10 +34,11 @@ const Main = () => {
       <ToggleButton value="right" aria-label="right aligned">
         <FormatAlignRightIcon />
       </ToggleButton>
-      <ToggleButton value="justify" aria-label="justified" disabled>
-        <FormatAlignJustifyIcon />
-      </ToggleButton>
+     
     </ToggleButtonGroup>
+</Stack>
+<Stack>
+
 </Stack>
 
 </Container>
