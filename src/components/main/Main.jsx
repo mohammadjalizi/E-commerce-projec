@@ -1,7 +1,9 @@
+import { useTheme } from '@emotion/react';
 import { Box, Container, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React from 'react'
 
 const Main = () => {
+  const theme = useTheme();
   const [alignment, setAlignment] = React.useState('left');
 
   const handleAlignment = (event, newAlignment) => {
@@ -9,7 +11,7 @@ const Main = () => {
   };
   return (
 <Container  >
-<Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+<Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}flexWrap={"wrap"} gap={3}>
 <Box >
             <Typography variant="h6">Selected Products</Typography>
             <Typography fontWeight={300} variant="body1">
@@ -30,13 +32,13 @@ const Main = () => {
       onChange={handleAlignment}
       aria-label="text alignment"
     >
-      <ToggleButton    className='myButton'   value="left" aria-label="left aligned">
+      <ToggleButton  sx={{color:theme.palette.text.primary}}  className='myButton'   value="left" aria-label="left aligned">
          All Products
       </ToggleButton>
-      <ToggleButton   className='myButton'   value="center" aria-label="centered">
+      <ToggleButton  sx={{color:theme.palette.text.primary,mx: "16px !important"}}   className='myButton'   value="center" aria-label="centered">
       MEN category
       </ToggleButton>
-      <ToggleButton    className='myButton'  value="right" aria-label="right aligned">
+      <ToggleButton  sx={{color:theme.palette.text.primary}}   className='myButton'  value="right" aria-label="right aligned">
             Women category
       </ToggleButton>
      
