@@ -6,6 +6,7 @@ import Header1 from "./components/header/Header1";
 import Header3 from "./components/header/Header3";
 import Hero from "./components/heroseaction/Hero";
 import Header2 from "./components/header/Header2";
+import Main from "./components/main/Main";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Header2/>
       <Header3/>
       <Hero/>
+      <Main/>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
