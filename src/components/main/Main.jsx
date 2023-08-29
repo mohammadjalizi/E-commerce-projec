@@ -1,17 +1,27 @@
 import { useTheme } from '@emotion/react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dialog, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dialog, IconButton, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+import CloseIcon from '@mui/icons-material/Close';
+
+
+const toggleDrawer = (anchor, open) => (event) => {
+  if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    return;
+  }
+
+  setState({ ...state, [anchor]: open });
+};
 
 
 const Main = () => {
   const theme = useTheme();
-  const [alignment, setAlignment] = React.useState('left');
+  const [alignment, setAlignment] = useState('left');
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -106,13 +116,20 @@ return(
 </Stack>
 
 
-<Dialog
+<Dialog sx={{".MuiPaper-root":{ minWidth:{xs:"100%", md:800} }}}
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-hello
+<Box>
+heloo
+
+</Box>
+<IconButton sx={{position:"absolute",top:0,right:0,":hover":{rotate:"160deg", color:"red", transition:"0.5s"}}}  onClick={toggleDrawer("top", false)}>
+      <CloseIcon/>
+              
+    </IconButton>
       </Dialog>
 </Container>
   )
