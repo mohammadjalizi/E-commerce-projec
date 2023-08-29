@@ -46,9 +46,11 @@ const Main = () => {
 </Stack>
 
 {/* carttttt */}
-<Stack>
+<Stack direction={"row"}flexWrap={"wrap"} justifyContent={"space-between"}>
 
-<Card sx={{ maxWidth: 333 ,mt:4}}>
+{["a","c","d"].map((item)=>{
+return(
+<Card key={item}  sx={{ maxWidth: 333 ,mt:4}}>
       <CardMedia
         sx={{ height: 277 }}
         image="https://mui.com//static/images/cards/contemplative-reptile.jpg"
@@ -73,9 +75,13 @@ const Main = () => {
                       />
       Add to cart
       </Button>
-      <Rating name="read-only" value={4} readOnly />
+      <Rating precision={0.5} name="read-only" value={4.5} readOnly />
       </CardActions>
     </Card>
+
+)
+
+})}
 
 </Stack>
 
