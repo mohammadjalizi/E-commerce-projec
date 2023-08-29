@@ -5,13 +5,7 @@ import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutl
 import CloseIcon from '@mui/icons-material/Close';
 
 
-const toggleDrawer = (anchor, open) => (event) => {
-  if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    return;
-  }
 
-  setState({ ...state, [anchor]: open });
-};
 
 
 const Main = () => {
@@ -30,6 +24,7 @@ const Main = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
 
   return (
 <Container  sx={{py:6}} >
@@ -126,7 +121,7 @@ return(
 heloo
 
 </Box>
-<IconButton sx={{position:"absolute",top:0,right:0,":hover":{rotate:"160deg", color:"red", transition:"0.5s"}}}  onClick={toggleDrawer("top", false)}>
+<IconButton sx={{position:"absolute",top:0,right:0,":hover":{rotate:"160deg", color:"red", transition:"0.5s"}}}  onClick={handleClose}>
       <CloseIcon/>
               
     </IconButton>
