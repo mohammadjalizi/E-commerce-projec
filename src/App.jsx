@@ -8,6 +8,7 @@ import Hero from "./components/heroseaction/Hero";
 import Header2 from "./components/header/Header2";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
+import ScrollToTop from "./components/scroll/ScrollToTop";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Main />
         </Box>
       <Footer/>
+      <ScrollToTop/>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
