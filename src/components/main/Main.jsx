@@ -3,6 +3,7 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dial
 import React, { useState } from 'react'
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import CloseIcon from '@mui/icons-material/Close';
+import ProductDetails from './ProductDetails';
 
 
 
@@ -15,7 +16,7 @@ const Main = () => {
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -117,14 +118,12 @@ return(
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-<Box>
-heloo
 
-</Box>
 <IconButton sx={{position:"absolute",top:0,right:0,":hover":{rotate:"160deg", color:"red", transition:"0.5s"}}}  onClick={handleClose}>
       <CloseIcon/>
               
     </IconButton>
+<ProductDetails />
       </Dialog>
 </Container>
   )
