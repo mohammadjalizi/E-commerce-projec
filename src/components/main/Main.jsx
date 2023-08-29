@@ -10,7 +10,7 @@ const Main = () => {
     setAlignment(newAlignment);
   };
   return (
-<Container  >
+<Container  sx={{py:6}} >
 <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}flexWrap={"wrap"} gap={3}>
 <Box >
             <Typography variant="h6">Selected Products</Typography>
@@ -50,7 +50,15 @@ const Main = () => {
 
 {["a","c","d"].map((item)=>{
 return(
-<Card key={item}  sx={{ maxWidth: 333 ,mt:4}}>
+<Card key={item}  sx={{
+                    maxWidth: 333,
+                    mt: 6,
+                    ":hover .MuiCardMedia-root ": {
+                      rotate: "1deg",
+                      scale: "1.1",
+                      transition: "0.35s",
+                    },
+                  }}>
       <CardMedia
         sx={{ height: 277 }}
         image="https://mui.com//static/images/cards/contemplative-reptile.jpg"

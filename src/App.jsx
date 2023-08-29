@@ -29,7 +29,7 @@ function App() {
             theme.palette.bg.main
           }
         >
-          {/* <Hero /> */}
+          <Hero />
           <Main />
         </Box>
       <Footer/>
