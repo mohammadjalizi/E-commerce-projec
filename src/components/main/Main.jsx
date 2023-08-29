@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react';
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React from 'react'
-
+import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 const Main = () => {
   const theme = useTheme();
   const [alignment, setAlignment] = React.useState('left');
@@ -48,10 +48,10 @@ const Main = () => {
 {/* carttttt */}
 <Stack>
 
-<Card sx={{ maxWidth: 345 }}>
+<Card sx={{ maxWidth: 333 ,mt:4}}>
       <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        sx={{ height: 277 }}
+        image="https://mui.com//static/images/cards/contemplative-reptile.jpg"
         title="green iguana"
       />
       <CardContent>
@@ -64,7 +64,15 @@ const Main = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+ 
+
+      <Button size="small"> 
+      <AddShoppingCartOutlinedIcon
+                        sx={{ mr: 1 }}
+                        fontSize="small"
+                      />
+      Add to cart
+      </Button>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
