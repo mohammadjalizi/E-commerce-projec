@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React from 'react'
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 const Main = () => {
@@ -63,17 +63,17 @@ const Main = () => {
           species, ranging across all continents except Antarctica
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{justifyContent:"space-between"}}>
  
 
-      <Button size="small"> 
+      <Button size="large"> 
       <AddShoppingCartOutlinedIcon
                         sx={{ mr: 1 }}
                         fontSize="small"
                       />
       Add to cart
       </Button>
-        <Button size="small">Learn More</Button>
+      <Rating name="read-only" value={4} readOnly />
       </CardActions>
     </Card>
 
