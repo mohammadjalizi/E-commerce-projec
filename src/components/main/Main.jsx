@@ -1,7 +1,9 @@
 import { useTheme } from '@emotion/react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
-import React from 'react'
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dialog, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+
+
 const Main = () => {
   const theme = useTheme();
   const [alignment, setAlignment] = React.useState('left');
@@ -9,6 +11,16 @@ const Main = () => {
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
 <Container  sx={{py:6}} >
 <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}flexWrap={"wrap"} gap={3}>
@@ -76,7 +88,7 @@ return(
       <CardActions sx={{justifyContent:"space-between"}}>
  
 
-      <Button size="large"> 
+      <Button  onClick={handleClickOpen}  size="large"> 
       <AddShoppingCartOutlinedIcon
                         sx={{ mr: 1 }}
                         fontSize="small"
@@ -93,6 +105,15 @@ return(
 
 </Stack>
 
+
+<Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+hello
+      </Dialog>
 </Container>
   )
 }
