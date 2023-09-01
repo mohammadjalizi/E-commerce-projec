@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dialog, IconButton, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Container, Dialog, IconButton, Rating, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import CloseIcon from '@mui/icons-material/Close';
@@ -28,9 +28,44 @@ const Main = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+  const allProductsAPI = "products?populate=*";
+  const menCategoryAPI = "products?populate=*&filters[category][$eq]=men";
+  const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women";
+
+  const [myDate, setmyDate] = useState(allProductsAPI);
+  
   const { data, error, isLoading } = useGetproductByNameQuery('products?populate=*')
   console.log(data)
 
+  if (isLoading) {
+    return (
+      <Box sx={{ py: 11, textAlign: "center" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container
+        sx={{
+          py: 11,
+          textAlign: "center",
+        }}
+      >
+        <Typography variant="h6">
+          {
+            // @ts-ignore
+            error.error
+          }
+        </Typography>
+
+        <Typography variant="h6">Please try again later</Typography>
+      </Container>
+    );
+  }
  if (data) {
   return (
     <Container  sx={{py:6}} >
@@ -55,7 +90,9 @@ const Main = () => {
           onChange={handleAlignment}
           aria-label="text alignment"
         >
-          <ToggleButton  sx={{color:theme.palette.text.primary}}  className='myButton'   value="left" aria-label="left aligned">
+          <ToggleButton  sx={{color:theme.
+// @ts-ignore
+          palette.text.primary}}  className='myButton'   value="left" aria-label="left aligned">
              All Products
           </ToggleButton>
           <ToggleButton  sx={{color:theme.palette.text.primary,mx: "16px !important"}}   className='myButton'   value="center" aria-label="centered">
@@ -84,7 +121,9 @@ const Main = () => {
                       }}>
           <CardMedia
             sx={{ height: 277 }}
-            image={`http://localhost:1337${item.attributes.productimag.data[0].attributes.url}`}
+            // @ts-ignore
+            image={`${import.meta.env.VITE_BASE_URL}
+            ${item.attributes.productimag.data[0].attributes.url}`}
             title="green iguana"
           />
           <CardContent>

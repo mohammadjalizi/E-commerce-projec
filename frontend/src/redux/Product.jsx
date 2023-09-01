@@ -6,8 +6,8 @@ export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
     // @ts-ignore
-    baseUrl: `${import.meta.env.VITE_BASE_URL}/api/`,
-  }),
+    baseUrl:`${import.meta.env.VITE_BASE_URL}/api/`}),
+
   endpoints: (builder) => ({
     getproductByName: builder.query({
       query: (name) => `${name}`,
