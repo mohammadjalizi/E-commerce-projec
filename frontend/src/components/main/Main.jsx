@@ -84,7 +84,7 @@ const Main = () => {
                       }}>
           <CardMedia
             sx={{ height: 277 }}
-            image={`${import.meta.env.VITE_BASE_URL}${item.attributes.productImg.data[0].attributes.url}`}
+            image={`http://localhost:1337${item.attributes.productimag.data[0].attributes.url}`}
             title="green iguana"
           />
           <CardContent>
