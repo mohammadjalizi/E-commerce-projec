@@ -16,8 +16,9 @@ const Main = () => {
   const theme = useTheme();
   const [alignment, setAlignment] = useState('left');
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
+  const handleAlignment = (event, newValue) => {
+    setAlignment(newValue);
+    setmyDate(newValue)
   };
   const [open, setOpen] = React.useState(false);
 
@@ -31,12 +32,12 @@ const Main = () => {
 
 
   const allProductsAPI = "products?populate=*";
-  const menCategoryAPI = "products?populate=*&filters[category][$eq]=men";
-  const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women";
+  const menCategoryAPI = "products?populate=*&filters[productCategory][$eq]=men";
+  const womenCategoryAPI = "products?populate=*&filters[productCategory][$eq]=women";
 
   const [myDate, setmyDate] = useState(allProductsAPI);
-  
-  const { data, error, isLoading } = useGetproductByNameQuery('products?populate=*')
+
+  const { data, error, isLoading } = useGetproductByNameQuery(myDate)
   console.log(data)
 
   if (isLoading) {
@@ -85,20 +86,20 @@ const Main = () => {
                 },
               }}
               color='error'
-          value={alignment}
+          value={myDate}
           exclusive
           onChange={handleAlignment}
           aria-label="text alignment"
         >
           <ToggleButton  sx={{color:theme.
 // @ts-ignore
-          palette.text.primary}}  className='myButton'   value="left" aria-label="left aligned">
+          palette.text.primary}}  className='myButton'   value={allProductsAPI} aria-label="left aligned">
              All Products
           </ToggleButton>
-          <ToggleButton  sx={{color:theme.palette.text.primary,mx: "16px !important"}}   className='myButton'   value="center" aria-label="centered">
+          <ToggleButton  sx={{color:theme.palette.text.primary,mx: "16px !important"}}   className='myButton'   value={menCategoryAPI} aria-label="centered">
           MEN category
           </ToggleButton>
-          <ToggleButton  sx={{color:theme.palette.text.primary}}   className='myButton'  value="right" aria-label="right aligned">
+          <ToggleButton  sx={{color:theme.palette.text.primary}}   className='myButton'  value={womenCategoryAPI} aria-label="right aligned">
                 Women category
           </ToggleButton>
          
