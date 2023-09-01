@@ -84,16 +84,21 @@ const Main = () => {
                       }}>
           <CardMedia
             sx={{ height: 277 }}
-            image="https://mui.com//static/images/cards/contemplative-reptile.jpg"
+            image={`${import.meta.env.VITE_BASE_URL}${item.attributes.productImg.data[0].attributes.url}`}
             title="green iguana"
           />
           <CardContent>
+            <Box sx={{display:"flex",justifyContent:"space-between"}}>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+           {item.attributes.producttitle  }
             </Typography>
+            <Typography gutterBottom variant="h5" component="div">
+           {item.attributes.productPrice  }
+            </Typography>
+            </Box>
+          
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
+            {item.attributes.productdescription  }
             </Typography>
           </CardContent>
           <CardActions sx={{justifyContent:"space-between"}}>
@@ -106,7 +111,7 @@ const Main = () => {
                           />
           Add to cart
           </Button>
-          <Rating precision={0.5} name="read-only" value={4.5} readOnly />
+          <Rating precision={0.5} name="read-only" value=       {item.attributes.productrating  }   readOnly />
           </CardActions>
         </Card>
     
