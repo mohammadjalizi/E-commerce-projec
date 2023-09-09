@@ -17,7 +17,7 @@ const Main = () => {
   const [alignment, setAlignment] = useState('left');
 
   const handleAlignment = (event, newValue) => {
-    setAlignment(newValue);
+   
     setmyDate(newValue)
   };
   const [open, setOpen] = React.useState(false);
@@ -38,7 +38,7 @@ const Main = () => {
   const [myDate, setmyDate] = useState(allProductsAPI);
 
   const { data, error, isLoading } = useGetproductByNameQuery(myDate)
-  console.log(data)
+ 
 
   if (isLoading) {
     return (

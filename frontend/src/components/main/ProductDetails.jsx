@@ -21,7 +21,7 @@ const ProductDetails = () => {
         <img
           width={360}
           src={
-            clickedProduct.attributes.productImg.data[selectedImg].attributes
+            clickedProduct.attributes.productimag.data[selectedImg].attributes
               .url
           }
           alt=""
